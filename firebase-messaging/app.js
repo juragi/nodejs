@@ -30,7 +30,7 @@ app.post("/message", function(req, res){
     var notification = {};
     notification.title = title;
     notification.body = body;
-    notification.click_action = 'https://bitscoin.co.kr';
+    notification.click_action = 'https://google.com';
     message(notification);
 });
 app.listen(3000,function(){

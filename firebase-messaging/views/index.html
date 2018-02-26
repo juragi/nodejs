@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <form id="sendForm">
+            <input type="text" name="title"/>
+            <input type="text" name="body"/>
+            <button>send</button>
+        </form>
+        <script>
+            $(document).ready(function(){
+                $("#sendForm").submit(function(event){
+                    event.preventDefault();
+                    
+                    $.post("message", $(this).serialize(), function(){
+
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>

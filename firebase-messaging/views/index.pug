@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  form(id="messageForm")
+    input(type="text" name="title" placeholder="title")
+    input(type="text" name="body" placeholder="내용")
+    button(id="btn") button
+
+
+  script.
+    console.log('ee');
+    $(document).ready(function(){
+      $("#messageForm").submit(function(event){
+        event.preventDefault();
+        var params = {};
+        params.title = $("input[name=title]").val();
+        params.body = $("input[name=body]").val();
+        $.post("message", params, function(data){
+
+        });
+      });
+    });
